@@ -1,0 +1,134 @@
+# Research Report Monitor Configuration
+
+keywords:
+  # Layer 1: AI Applications & Agents
+  - 人工智能
+  - 大模型
+  - AI
+  - Claude
+  - Codex
+  - GPT
+  - 具身智能
+  - Embodied AI
+  - Reasoning模型
+  - 多模态
+  - 长文本
+  - MoE
+  - AI Agent
+  - 智能体
+  - Agentic
+  - 人机协同
+  - CodeLLM
+  - 代码大模型
+  - SWE-Agent
+  - Copilot
+  - 代码语义
+
+  # Layer 2: Compute & Chip Architecture
+  - 半导体
+  - 芯片
+  - 算力
+  - AI加速芯片
+  - GPGPU
+  - ASIC
+  - NPU
+  - 存算一体
+  - 类脑芯片
+  - NVLink
+  - UALink
+  - 智算中心
+  - CXL
+  - 片上网络
+  - 硅光子
+  - RISC-V
+  - TPU
+  - 英伟达
+  - NVIDIA
+  - 台积电
+  - 中芯国际
+  - 寒武纪
+  - 海光信息
+
+  # Layer 3: Advanced Packaging & Process
+  - 先进封装
+  - CoWoS
+  - SoIC
+  - 3D IC
+  - 2.5D封装
+  - Chiplet
+  - 芯粒
+  - HBM
+  - 高带宽内存
+  - 先进制程
+  - 2nm
+  - GAA
+  - 环绕栅极
+  - 背面供电
+  - BSPDN
+
+  # Layer 4: Semiconductor Materials
+  - 材料
+  - 玻璃基板
+  - 高导热材料
+  - 环氧模塑料
+  - 硅片
+  - 第三代半导体
+  - SiC
+  - GaN
+  - 氧化镓
+  - 钻石半导体
+  - EUV光刻胶
+  - 电子气体
+  - CMP抛光液
+  - 前驱体材料
+
+schedule:
+  check_times:
+    - "08:30"
+    - "12:00"
+    - "18:00"
+  interval_minutes: 0
+
+download:
+  output_dir: "./reports"
+  download_pdf: true
+  max_concurrent: 3
+  max_file_size_mb: 50
+
+sources:
+  eastmoney:
+    enabled: true
+    page_size: 50
+  cninfo:
+    enabled: true
+    page_size: 30
+  gelonghui:
+    enabled: false
+    page_size: 20
+  rss:
+    enabled: false
+    rsshub_base: "https://rsshub.app"
+    feeds:
+      - name: "东方财富-行业研报"
+        path: "/eastmoney/report/industry"
+        enabled: true
+      - name: "东方财富-个股研报"
+        path: "/eastmoney/report/stock"
+        enabled: true
+      - name: "财联社-电报"
+        path: "/cls/telegraph"
+        enabled: false
+    custom_urls: []
+  akshare:
+    enabled: false
+
+notification:
+  console: true
+  log_file: "./logs/monitor.log"
+  desktop_notify: false
+
+dedup:
+  history_file: "./data/download_history.json"
+  keep_days: 90
+
+log_level: "INFO"
