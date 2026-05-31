@@ -1,0 +1,9 @@
+# Core dependencies
+requests>=2.28.0
+pyyaml>=6.0
+schedule>=1.2.0
+rich>=13.0.0
+
+# Optional dependencies (install as needed)
+# pip install plyer        # Desktop notifications
+# pip install akshare      # AKShare financial data (enable akshare source)
